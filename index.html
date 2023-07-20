@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+    <style>
+      body{
+    background-image: url("./images/view1.jpg");
+    background-size: cover;
+      }
+    
+      #club {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #door {
+        width: 350px;
+        height: 600px;
+        background-color: #567;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        padding: 10px 30px;
+        background-color: rgb(180, 27, 21);
+        border: none;
+        margin: 5px;
+        font-size: 2em;
+        cursor: pointer;
+        align-self: center;
+      }
+      button:hover {
+        background-color: rgb(255, 140, 9);
+      }
+      form {
+        padding: 40px;
+      }
+      input {
+        display: block;
+        padding: 10px;
+        margin: 20px;
+        font-size: 2em;
+      }
+    </style>
+    </head>
+    <body>
+        <div id="club">
+            <form>
+                <h1>Registration</h1>
+                <input type="text" placeholder="Name" id="name" />
+                <input type="text" placeholder="Username" id="username" />
+                <input type="email" placeholder="Email" id="email" />
+                <input type="password" placeholder="Password" id="password"/>
+                <input type="password" placeholder="Confirm Password" id="confirmPassword"/>
+                <input type="button" value="Register" />
+            </form>
+                <!-- <div id="door">
+                  <button id="enterButton"
+                onClick="tryToEnter()">Enter</button>
+                </div> -->
+        </div>
+        
+        <script>
+          let guestList = ["Elon", "Al", "Don", "Maria", "Jesse"];
+
+          function tryToEnter() {
+            let name = document.getElementById("name").value;
+            let age = 21;
+
+            let onGuestList = guestList.find(function (guestName) {
+              return guestName == name;
+            });
+
+            if (onGuestList || age >= 21) {
+              document.getElementById("enterButton").style.background = "lime";
+            } else {
+              document.getElementById("enterButton").style.background = "red";
+            }
+          }
+
+          document.getElementById("registerButton").addEventListener("click", tryToEnter);
+        </script>
+    </body>
+</html>
